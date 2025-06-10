@@ -1,0 +1,14 @@
+.imagen-rotando {
+  width: 200px;
+  height: auto;
+  animation: girar-inverso 6s linear infinite;
+}
+
+@keyframes girar-inverso {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
