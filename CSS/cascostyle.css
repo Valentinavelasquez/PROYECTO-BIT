@@ -5,15 +5,20 @@ body {
   font-family: sans-serif;
 }
 #ui {
-  position: absolute;
+  position: relative;
   top: 20px;
   left: 20px;
   z-index: 10;
   background: rgba(0, 0, 0, 0.6);
   padding: 10px;
   border-radius: 8px;
+  width: 22rem;
 }
 button, select, input[type="color"] {
   margin-top: 5px;
   padding: 5px;
+}
+img.imagen-producto {
+    width: 100%;
+    border-radius: .5rem;
 }
