@@ -1,78 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 :root{
+  --font: "Anton";
+  --fontsize-title: 50px; 
+  --fontsize-subtitle: 20px;
+  --fontsize-body: 10px;
 }
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .titulo{
   display: flex;
   justify-content: center;
   margin: 2px 0 2px 0;
   background-color: #575D59;
+  font-family: var(--font);
+  font-size: var(--fontsize-title);
 }
-
-.productos{
+img{
   display: flex;
-  background-color: #575D59;
   justify-content: center;
+  align-content: center;
+  height: 160px;
+  width: 100%;
 }
-
 .card {
- width: 190px;
- height: 254px;
- padding: .8rem;
- margin: 1rem;
- background: #f5f5f5;
- position: relative;
- overflow: visible;
- box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  width: 190px;
+  height: 254px;
+  padding: .8em;
+  margin: 1rem;
+  background: #f5f5f5;
+  position: relative;
+  overflow: visible;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .card-info {
- padding-top: 10%;
+  padding-top: 10%;
 }
 
 svg {
- width: 20px;
- height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .card-footer {
- width: 100%;
- display: flex;
- justify-content: space-between;
- align-items: center;
- padding-top: 10px;
- border-top: 1px solid #ddd;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
 }
 
 /*Text*/
 .text-title {
- font-weight: 900;
- font-size: 1.2em;
- line-height: 1.5;
- display: flex;
- justify-content: center;
- margin-right: 0.5rem;
+  font-family: var(--font);
+  font-weight: 900;
+  font-size: var(--fontsize-subtitle);
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  margin-right: 0.5rem;
 }
 
 .text-body {
- font-size: .9em;
- padding-bottom: 10px;
- display: flex;
- justify-content: center;
+  font-family: var(--font);
+  font-size: var(--fontsize-body);
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 /*Button*/
 .card-button {
- border: 1px solid #252525;
- display: flex;
- padding: .3em;
- cursor: pointer;
- border-radius: 50px;
- transition: .3s ease-in-out;
+  border: 1px solid #252525;
+  display: flex;
+  padding: .3em;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: .3s ease-in-out;
 }
 
 /*Hover*/
 .card-button:hover {
- border: 1px solid #59FF00;
- background-color: #59FF00;
+  border: 1px solid #000000;
+  background-color: #59FF00;
 }
 
+/*carrusel*/
 
+.carousel {
+  background-color: #575D59;
+  margin: 0 auto;
+  padding: 20px 0;
+  overflow: hidden;
+  display: flex;
+  flex: 0 0 100%;
+  /*Detener movimiento al pasar el mouse*/
+  &:hover .group {
+  animation-play-state: paused;
+  }
+}
+
+/* Agrupando las tarjetas para una mejor estructura. */
+.group {
+  display: flex;
+  gap: 2px;
+  justify-content: space-around;
+  /* Agrega padding a la derecha para crear un espacio entre la última y la primera tarjeta. */
+  will-change: transform; /* Deberíamos ser amables con el navegador: hazle saber qué vamos a animar. */
+  animation: scrolling 20s linear infinite;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
