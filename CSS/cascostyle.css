@@ -5,6 +5,15 @@
   --fontsize-title: 50px; 
   --fontsize-subtitle: 20px;
   --fontsize-body: 10px;
+
+  --neon-green: rgb(57, 255, 20);       /* Para botones CTA, precios y elementos destacados */
+  --dark-green: rgb(0, 125, 50);        /* Hover en botones, tonos de contraste con el verde neón */
+  --blue-medium: rgb(67, 133, 245);     /* Bordes de tarjetas, banners promocionales */
+  --blue-dark: rgb(0, 31, 140);         /* Fondo del encabezado (header), títulos destacados */
+  --blue-deep: rgb(0, 6, 45);           /* Fondo del pie de página (footer) */
+  --light-gray: rgb(244, 244, 244);     /* Fondo neutro de tarjetas, bloques blancos */
+  --white: rgb(255, 255, 255);          /* Texto sobre fondos oscuros, fondo principal */
+  --text-dark: rgb(17, 17, 17);         /* Texto general sobre fondos claros */
 }
 .anton-regular {
   font-family: "Anton", sans-serif;
@@ -17,9 +26,10 @@
   justify-content: center;
   margin: 2px 0 2px 0;
   padding: 10px;
-  background-color: #575D59;
+  background-color: var(--blue-medium);
   font-family: var(--font);
   font-size: var(--fontsize-title);
+  color: var(--white);
 }
 .imgcarousel{
   display: flex;
@@ -33,7 +43,6 @@
   height: 254px;
   padding: .8em;
   margin: 1rem;
-  background: #f5f5f5;
   position: relative;
   overflow: visible;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -47,17 +56,13 @@ svg {
   width: 20px;
   height: 20px;
 }
-
 .card-footer {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 10px;
   border-top: 1px solid #ddd;
 }
-
-/*Text*/
 .text-title {
   font-family: var(--font);
   font-weight: 900;
@@ -66,39 +71,33 @@ svg {
   display: flex;
   justify-content: center;
   margin-right: 0.5rem;
-  color: black;
+  color: var(--text-dark);
 }
-
 .text-body {
   font-family: var(--font);
   font-size: var(--fontsize-body);
   padding-bottom: 10px;
   display: flex;
   justify-content: center;
+  color: var(--text-dark);
 }
-
-/*Button*/
 .card-button {
-  border: 1px solid #252525;
+  background-color: var(--neon-green);
   display: flex;
   padding: .3em;
   cursor: pointer;
   border-radius: 50px;
   transition: .3s ease-in-out;
 }
-
-/*Hover*/
 .card-button:hover {
-  border: 1px solid #000000;
-  background-color: #59FF00;
+  background-color: var(--dark-green);
 }
 
 /*carrusel*/
 
 .carousel {
-  background-color: #575D59;
+  background-color: var(--light-gray);
   margin: 0 auto;
-  padding: 20px 0;
   overflow: hidden;
   display: flex;
   flex: 0 0 100%;
@@ -108,14 +107,13 @@ svg {
   }
 }
 
-/* Agrupando las tarjetas para una mejor estructura. */
 .group {
   display: flex;
   gap: 2px;
   justify-content: space-around;
-  /* Agrega padding a la derecha para crear un espacio entre la última y la primera tarjeta. */
   will-change: transform; /* Deberíamos ser amables con el navegador: hazle saber qué vamos a animar. */
   animation: scrolling 20s linear infinite;
+  background-color: var(--light-gray);
 }
 
 @keyframes scrolling {
@@ -142,8 +140,8 @@ svg {
   font-family: var(--font);
   display: block;
   cursor: pointer;
-  color: white;
-  margin: .5rem 0 0.5rem 0;
+  color: var(--white);
+  margin: .5rem 0 1rem 0;
   position: relative;
   text-decoration: none;
   font-weight: 600;
@@ -158,7 +156,7 @@ svg {
   display: block;
   padding: .5rem 1rem;
   font-size: 1.1rem;
-  background: #575D59;
+  background: var(--blue-dark);
   border-radius: 3px;
   height: 100%;
   text-align: center;
@@ -171,7 +169,7 @@ svg {
   left: 0;
   width: 400%;
   height: 100%;
-  background: linear-gradient(115deg,#c8ff3e,#ffd117, #59ff00,#baff94);
+  background: linear-gradient(-45deg, var(--neon-green),rgb(50, 220, 30),rgb(20, 160, 40),var(--dark-green), var(--neon-green));
   background-size: 25% 100%;
   animation: an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop .75s linear infinite;
   animation-play-state: paused;
@@ -196,33 +194,48 @@ svg {
 .img-cat-cascos{
   display: flex;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 150px;
+  height: 150px;
 }
 .cardcascos {
   position: relative;
-  width: 150px;
+  width: 190px;
   height: 254px;
-  background-color: white;
+  background-color: var(--light-gray);
   display: flex;
-  flex-wrap: nowrap;
   flex-direction: column;
   padding: 12px;
+  margin: 20px;
   border-radius: 8px;
   cursor: pointer;
   color: white;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.categoriacascos{
+  justify-content: space-around;
+  overflow: scroll;
+}
+
+.text-cat-cascos{
+  display: flex;
+  justify-content: center;
+  font-family: var(--font);
+  font-size: var(--fontsize-subtitle);
+  color: var(--text-dark);
 }
 
 .cardcascos::before {
   content: '';
   position: absolute;
   inset: 0;
-  left: -5px;
+  left: -7px;
+  right: -7px;
   margin: auto;
-  width: 200px;
   height: 264px;
   border-radius: 10px;
-  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+  background: linear-gradient(-45deg, var(--neon-green), var(--dark-green));
   z-index: -10;
   pointer-events: none;
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -233,7 +246,7 @@ svg {
   z-index: -1;
   position: absolute;
   inset: 0;
-  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  background: linear-gradient(-45deg, var(--neon-green), var(--dark-green));
   transform: translate3d(0, 0, 0) scale(0.95);
   filter: blur(20px);
 }

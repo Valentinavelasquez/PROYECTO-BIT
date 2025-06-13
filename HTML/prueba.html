@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MotoStore</title>
+  <style>
+    :root {
+      --neon-green: #39ff14;
+      --dark-green: #007d32;
+      --blue-medium: #4385f5;
+      --blue-dark: #001f8c;
+      --blue-deep: #00062d;
+      --light-gray: #f4f4f4;
+      --text-dark: #111;
+      --white: #fff;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--light-gray);
+      color: var(--text-dark);
+    }
+
+    header {
+      background-color: var(--blue-dark);
+      padding: 20px;
+      color: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .banner {
+      background-color: var(--blue-medium);
+      color: var(--white);
+      padding: 40px;
+      text-align: center;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      background-color: var(--white);
+    }
+
+    .product-card {
+      border: 2px solid var(--blue-medium);
+      border-radius: 8px;
+      padding: 20px;
+      background-color: var(--light-gray);
+      text-align: center;
+    }
+
+    .product-card h3 {
+      color: var(--blue-dark);
+    }
+
+    .price {
+      color: var(--neon-green);
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .btn {
+      background-color: var(--neon-green);
+      border: none;
+      padding: 10px 20px;
+      color: var(--text-dark);
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: var(--dark-green);
+      color: var(--white);
+    }
+
+    footer {
+      background-color: var(--blue-deep);
+      color: var(--white);
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MotoStore</h1>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Catálogo</a>
+      <a href="#">Ofertas</a>
+      <a href="#">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <h2>Accesorios para motociclistas con estilo y seguridad</h2>
+    <p>¡Explora nuestra colección con envío rápido en todo el país!</p>
+  </section>
+
+  <section class="products">
+    <div class="product-card">
+      <h3>Casco Deportivo</h3>
+      <p class="price">$299.000</p>
+      <button class="btn">Comprar ahora</button>
+    </div>
+    <div class="product-card">
+      <h3>Guantes Racing</h3>
+      <p class="price">$89.000</p>
+      <button class="btn">Comprar ahora</button>
+    </div>
+    <div class="product-card">
+      <h3>Chaqueta con Protecciones</h3>
+      <p class="price">$459.000</p>
+      <button class="btn">Comprar ahora</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MotoStore. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
