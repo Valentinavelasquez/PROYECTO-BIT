@@ -16,11 +16,12 @@
   display: flex;
   justify-content: center;
   margin: 2px 0 2px 0;
+  padding: 10px;
   background-color: #575D59;
   font-family: var(--font);
   font-size: var(--fontsize-title);
 }
-img{
+.imgcarousel{
   display: flex;
   justify-content: center;
   align-content: center;
@@ -65,6 +66,7 @@ svg {
   display: flex;
   justify-content: center;
   margin-right: 0.5rem;
+  color: black;
 }
 
 .text-body {
@@ -124,3 +126,130 @@ svg {
     transform: translateX(-100%);
   }
 }
+
+/* Botón personaliza*/
+.seccion-botonpersonalizado{
+ display: flex;
+ justify-content: center;
+}
+
+.botoncustom{
+  width: 600px;
+  height: 100%;
+}
+
+.codepen-button {
+  font-family: var(--font);
+  display: block;
+  cursor: pointer;
+  color: white;
+  margin: .5rem 0 0.5rem 0;
+  position: relative;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 3px;
+  isolation: isolate;
+}
+
+.codepen-button span {
+  position: relative;
+  display: block;
+  padding: .5rem 1rem;
+  font-size: 1.1rem;
+  background: #575D59;
+  border-radius: 3px;
+  height: 100%;
+  text-align: center;
+}
+
+.codepen-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 100%;
+  background: linear-gradient(115deg,#c8ff3e,#ffd117, #59ff00,#baff94);
+  background-size: 25% 100%;
+  animation: an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop .75s linear infinite;
+  animation-play-state: paused;
+  translate: -5% 0%;
+  transition: translate 0.25s ease-out;
+}
+
+.codepen-button:hover::before {
+  animation-play-state: running;
+  transition-duration: 0.75s;
+  translate: 0% 0%;
+}
+
+@keyframes an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop {
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+/* From Uiverse.io by Pravins01 */ 
+
+.img-cat-cascos{
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+.cardcascos {
+  position: relative;
+  width: 150px;
+  height: 254px;
+  background-color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+}
+
+.cardcascos::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -5px;
+  margin: auto;
+  width: 200px;
+  height: 264px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cardcascos::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.cardcascos p:last-child {
+  color: #e81cff;
+  font-weight: 600;
+}
+
+.cardcascos:hover::after {
+  filter: blur(30px);
+}
+
+.cardcascos:hover::before {
+  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+}
+
+
+
